@@ -1,0 +1,64 @@
+.container {
+    width: 800px;
+    height: 200px;
+    /* height: 400px; */
+    /* margin: 100px auto; */ /* tab容器的外边框不固定，最好由要引入tab容器的元素指定，做到灵活使用 */
+    background-color: #fff;
+    color:gray;
+    /* box-shadow: 0 1px 3px rgba(0, 0, 0, .1); */
+}
+
+.tab-wrapper {
+    position: relative;
+    width: 800px;
+    height: 60px;
+    background-color: #33344a;
+    /* top:70%;
+    left:50%; */
+}
+
+.tab-wrapper .tab-textarea {
+
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding: 30px;
+    color: #999;
+    background-color: #fff;
+    /* display:none; */
+    opacity: 0;
+
+
+
+}
+.tab-radio:checked+label+.tab-textarea{
+    /* display:block;
+    transition:display 1.3s; */
+    opacity: 1;
+    transition: opacity 1.3s;
+}
+
+/* .tab-radio,
+.tab-textarea {
+    display: none;
+} */
+.tab-radio{
+    display:none;
+}
+
+.tab-wrapper label {
+    position: relative;
+    height: 60px;
+    line-height: 60px;
+    padding: 0 40px;
+    float: left;
+    transform: scale(0.9);
+}
+
+.tab-radio:checked+label {
+    background-color: #e74c3c;
+    color:white;
+    transform: scale(1);
+
+}
