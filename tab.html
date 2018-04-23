@@ -1,0 +1,61 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>tab插件</title>
+    <link href="tab.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="tab-wrapper">
+            <input type="radio" name="tab-header" id="radio-01" class="tab-radio tab-radio-01" checked/>
+            <label for="radio-01">西游记</label>
+            <textarea class="tab-textarea tab-textarea-01">西游记，三个动物和一个人的故事</textarea>
+
+            <input type="radio" name="tab-header" id="radio-02" class="tab-radio tab-radio-02" />
+            <label for="radio-02">红楼梦</label>
+            <textarea class="tab-textarea tab-textarea-01">红楼梦，一个男人和一堆女人的故事</textarea>
+
+            <input type="radio" name="tab-header" id="radio-03" class="tab-radio tab-radio-03" />
+            <label for="radio-03">三国演义</label>
+            <textarea class="tab-textarea tab-textarea-01">三国演义，一堆男人争权的故事</textarea>
+
+            <input type="radio" name="tab-header" id="radio-04" class="tab-radio tab-radio-04" />
+            <label for="radio-04">水浒传</label>
+            <textarea class="tab-textarea tab-textarea-01">水浒传，一堆男人落寇的故事</textarea>
+        </div>
+    </div>
+    <button onclick="javascript:fn('add');">增加一个Tab</button>
+    <button onclick="javascript:fn('delete');">删除一个Tab</button>
+    <button onclick="javascript:setHeader();">设置第一个tab页文字为 Tab插件</button>
+    <button onclick="javascript:setContent();">设置第一个tab页内容区文字为 Tab插件的内容</button>
+    <button onclick="javascript:setHeaderStyle();">设置第一个Header的文字为黄色</button>
+    <button onclick="javascript:setContentStyle();">设置第一个Content区文字为红色</button>
+    <!-- <div class="container">
+        <div class="tab-wrapper"></div>
+    </div> -->
+    <script src="tab03.js"></script>
+    <script>
+        var container1 = TabPlugin(document.getElementsByClassName('container')[0]);
+        // var container2 = TabPlugin(document.getElementsByClassName('container')[1]);
+    function fn(opr){
+        container1.refresh(opr);
+    }
+    // container2.refresh("add");
+    function setHeader(){
+        container1.setHeader('Tab插件',0);
+    }
+    function setContent(){
+        container1.setContent('Tab插件的内容',0);
+    }
+    function setHeaderStyle(){
+        container1.setHeaderStyle('color','yellow',0);
+    }
+    function setContentStyle(){
+        container1.setContentStyle('color','red',0);
+    }
+    </script>
+</body>
+
+</html>
